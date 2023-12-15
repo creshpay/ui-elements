@@ -1,0 +1,82 @@
+@import '@vuepic/vue-datepicker/dist/main.css';
+.date-range-filter.active {
+  input {
+    border-color: rgb(var(--color-primary)) !important;
+  }
+}
+.dp__theme_light {
+  --dp-background-color: rgb(var(--color-white));
+  --dp-text-color: rgb(var(--color-dark));
+  --dp-hover-color: #f3f3f3;
+  --dp-hover-text-color: rgb(var(--color-dark));
+  --dp-hover-icon-color: #959595;
+  --dp-primary-color: rgb(var(--color-primary));
+  --dp-primary-disabled-color: #959595;
+  --dp-primary-text-color: #f8f5f5;
+  --dp-secondary-color: #c0c4cc;
+  --dp-border-color: #ddd;
+  --dp-menu-border-color: #ddd;
+  --dp-border-color-hover: rgb(var(--color-primary));
+  --dp-disabled-color: #f6f6f6;
+  --dp-scroll-bar-background: #f3f3f3;
+  --dp-scroll-bar-color: #959595;
+  --dp-success-color: rgb(var(--color-primary));
+  --dp-success-color-disabled: #a3d9b1;
+  --dp-icon-color: #959595;
+  --dp-danger-color: #ff6f60;
+  --dp-highlight-color: rgba(25, 118, 210, 0.1);
+}
+
+.dp__cell_auto_range_start,
+.dp__date_hover_start:hover,
+.dp__range_start {
+  border-bottom-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.dp__cell_auto_range_end,
+.dp__date_hover_end:hover,
+.dp__range_end {
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
+
+.dp__range_between {
+  border-radius: 0 !important;
+}
+
+.dp__cell_inner {
+  border-radius: 30px;
+}
+
+.dp__range_end,
+.dp__range_start,
+.dp__active_date {
+  background: rgb(var(--color-primary));
+}
+
+.dp__menu_index {
+  overflow: hidden;
+}
+
+.dp__menu {
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.dp__input {
+  height: 42px;
+  border: 2px solid #e8ecef;
+  border-radius: 9px;
+  min-width: 15.25rem;
+  font-family: lato-regular,Roboto,sans-serif;
+}
+
+.dp__clear_icon {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  z-index: 999999;
+}
+
+

@@ -1,0 +1,323 @@
+.c-datatable {
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 2px 16px 0 #999BA812;
+  background: rgb(var(--color-white));
+  color: rgba(var(--color-black), 0.87);
+
+  table {
+    width: 100%;
+    border-spacing: 0;
+    position: relative;
+  }
+
+  thead {
+
+    &.c-datatable-header {
+      tr {
+        height: 60px;
+        background: rgb(var(--color-lightest-grey));
+
+        th {
+          border-bottom: 0 !important;
+          font-size: 14px !important;
+          color: rgb(var(--color-black)) !important;
+          line-height: 20px !important;
+          padding: 0 1rem;
+          &.sortable {
+            cursor: pointer;
+          }
+          /* If you want to implement it in very old browser-versions */
+          -webkit-user-select: none; /* Chrome/Safari */
+          -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* IE10+ */
+
+          /* The rule below is not implemented in browsers yet */
+          -o-user-select: none;
+
+          /* The rule below is implemented in most browsers by now */
+          user-select: none;
+
+          &.align-start {
+            text-align: left;
+          }
+
+          &.align-end {
+            text-align: right;
+          }
+
+          &.align-center {
+            text-align: center;
+          }
+
+          span {
+            font-family: var(--font-text-bold);
+          }
+          height: 60px;
+          // sorting icon
+          i {
+            position: absolute !important;
+          }
+        }
+        th:first-child {
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+        }
+
+        th:last-child {
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+      }
+    }
+
+    &.loading-bar-thead {
+      tr {
+        position: absolute;
+        width: 100%;
+      }
+      height: 10px;
+      overflow: hidden;
+      .slider{
+        position:absolute;
+        width: 100%;
+        height:5px;
+        z-index: 100;
+        overflow-x: hidden;
+      }
+
+      .line{
+        position:absolute;
+        opacity: 0.4;
+        background: rgb(var(--color-primary));
+        width:150%;
+        height:5px;
+      }
+
+      .subline{
+        position:absolute;
+        background:rgb(var(--color-primary));
+        height:5px;
+      }
+      .inc{
+        animation: increase 2s infinite;
+      }
+      .dec{
+        animation: decrease 2s 0.5s infinite;
+      }
+
+      @keyframes increase {
+         from { left: -5%; width: 5%; }
+         to { left: 130%; width: 100%;}
+      }
+      @keyframes decrease {
+         from { left: -80%; width: 80%; }
+         to { left: 110%; width: 10%;}
+      }
+    }
+  }
+
+  tbody {
+    width: 100%;
+    tr {
+      height: 60px;
+      td {
+        border-bottom: 0 !important;
+        padding: 0 1rem;
+        font-family: var(--font-text-regular);
+      }
+    }
+
+    tr.skeleton-datatable-row {
+      height: 60px;
+      position: relative;
+      @keyframes shine {
+        to {
+          background-position: 100% 0;
+        }
+      }
+      td {
+        position: absolute;
+        width: 100%;
+        height: 60px;
+        padding: 0 !important;
+      }
+      .skeleton-loader {
+        width: 100%;
+        height: 40px;
+        display: block;
+        position: absolute;
+        padding: 0 1rem;
+      }
+
+      .loading-text {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+        color: grey;
+      }
+
+      &:nth-child(odd) td {
+        background-size: 50px 500px;
+        background: rgb(var(--color-lightest-blue)) linear-gradient(
+            to right,
+            rgba(var(--rgb-white), 0),
+            rgba(var(--rgb-white), 0.2) 50%,
+            rgba(var(--rgb-white), 0.5) 70%,
+            rgba(var(--rgb-white), 0.8) 90%,
+            rgba(163, 37, 37, 0) 100%
+        ) repeat-y 0 0;
+        animation: shine 1.5s infinite;
+      }
+
+      &:nth-child(even) td {
+        background-size: 50px 500px;
+        background: rgb(var(--color-lightest-blue)) linear-gradient(
+            to right,
+            rgba(var(--rgb-white), 0),
+            rgba(var(--rgb-white), 0.2) 50%,
+            rgba(var(--rgb-white), 0.5) 70%,
+            rgba(var(--rgb-white), 0.8) 90%,
+            rgba(163, 37, 37, 0) 100%
+        ) repeat-y 0 0;
+        animation: shine 1.5s infinite;
+      }
+    }
+
+    tr.empty-datatable {
+      height: 300px;
+      .icon-wrapper {
+        width: 100px;
+        height: 100px;
+        background: rgba(var(--color-tertiary), 0.06);
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      td {
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        padding: 0 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgb(var(--color-white));
+      }
+      .empty-text {
+        padding: 15px;
+        &.error {
+          color: rgb(var(--color-error));
+        }
+      }
+    }
+
+    tr:nth-child(odd) {
+      background-color: transparent;
+
+      &:hover {
+        background-color: rgb(var(--color-datatable-hover));
+      }
+    }
+
+    tr:nth-child(even) {
+      background-color: rgb(var(--color-lightest-blue));
+
+      &:hover {
+        background-color: rgb(var(--color-datatable-hover));
+      }
+    }
+  }
+
+  .c-datatable-footer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    font-family: var(--font-text-regular);
+
+    .page-select {
+      display: flex;
+      align-items: center;
+
+      .c-datatable-footer-page-select {
+        min-width: 60px;
+        margin-left: 15px;
+      }
+    }
+
+    .page-index {
+      margin: 0 1rem;
+    }
+
+    .page-prev-next-triggers {
+      display: flex;
+      .page-prev-trigger,
+      .page-next-trigger {
+        button {
+          min-width: unset !important;
+        }
+      }
+    }
+  }
+
+  &.lite {
+    box-shadow: none;
+    background: none;
+    padding: 0;
+
+    table {
+      border-collapse:separate;
+      border-spacing:0 8px;
+    }
+
+    thead {
+      &.c-datatable-header {
+        tr {
+          background: none;
+
+          th {
+            span {
+              color: rgb(var(--color-lite-datatable-header-text-color));
+            }
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td:first-child {
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+        }
+        td:last-child {
+          border-bottom-right-radius: 8px;
+          border-top-right-radius: 8px;
+        }
+      }
+      tr:nth-child(odd),
+      tr:nth-child(even) {
+        background: rgb(var(--color-white));
+
+        &:hover {
+          background-color: rgb(var(--color-datatable-hover));
+        }
+      }
+
+      tr.empty-datatable {
+        &:nth-child(odd),
+        &:nth-child(even) {
+          background: none !important;
+
+          &:hover {
+            background-color: transparent !important;
+          }
+        }
+      }
+    }
+  }
+}

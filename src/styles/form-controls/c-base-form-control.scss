@@ -1,0 +1,144 @@
+$form-label: rgb(var(--color-dark));
+$form-label-focus: rgb(var(--color-primary));
+$form-line: #979797;
+$form-line-focus: $form-label-focus;
+$form-input-text: $form-label;
+$form-input-text-focus: $form-label-focus;
+$form-field-invalid-foreground: rgb(var(--color-error));
+
+$dropdown-hoverBackground: #e8eaf6;
+$dropdown-selectedBackground: #9fa8da;
+
+.c-form-control:not(.bordered) {
+  position:relative;
+  display:flex;
+  flex-direction: column;
+  color:$form-label;
+  padding: 1.25rem 0 0 0;
+  background: transparent;
+
+  @include phone {
+    padding: 1rem 0 0 0 !important;
+  }
+
+  &::after{
+    content:"\00A0";
+    display:block;
+    color: $form-field-invalid-foreground;
+    font-size: 0.75rem;
+    padding-top: 0.9375rem;
+
+    @include phone {
+      padding-top: 0rem;
+    }
+  }
+
+  .c-form-control-label {
+    font-family: var(--font-text-regular), 'Roboto', sans-serif;
+    position:absolute;
+    display:flex;
+    top: 38px;
+    left: 0px;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+    pointer-events:none;
+    cursor:text;
+    text-transform: uppercase;
+  }
+
+  input,
+  select,
+  textarea {
+    font-family: var(--font-text-regular), 'Roboto', sans-serif;
+    padding: 1.125rem 0 1rem 0;
+    display:flex;
+    width:100%;
+    border:none;
+    font-size: 1.1rem;
+    color:$form-input-text;
+    border-bottom: 1px solid $form-line;
+    outline:none;
+    margin-bottom: 0.5rem;
+    background: transparent;
+    box-sizing: border-box;
+
+    &:invalid,
+    &.invalid {
+      outline:none;
+      box-shadow: none;
+    }
+    &:focus, &.valid.not-empty, &.not-empty {
+      & ~ .c-form-control-label{
+        font-size: 0.875rem;
+        @include tablet_and_up {
+          top: -3px;
+        }
+        @include phone {
+          top: 0px;
+        }
+      }
+    }
+    &:focus{
+      outline:none;
+      // color:$form-input-text-focus;
+      padding-bottom: 1rem - 0.125rem;
+      border-bottom-width: 0.1875rem;
+      border-bottom-color:$form-line-focus;
+
+      & ~ .c-form-control-label{
+        color:$form-label-focus;
+      }
+    }
+  }
+}
+
+.c-form-control.invalid {
+  color: $form-field-invalid-foreground;
+  input:focus ~ .c-form-control-label {
+    color: $form-field-invalid-foreground;
+  }
+  .error-message {
+    font-size: 0.75rem;
+    color: $form-field-invalid-foreground;
+  }
+}
+
+.c-form-control.bordered {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: rgb(var(--color-dark));
+  padding: 1.25rem 0 1.25rem 0;
+  background: transparent;
+
+  &:focus{
+    outline:none;
+    border: 2px solid $form-line;
+    border-color:$form-line-focus;
+
+    & ~ .c-form-control-label {
+      color:$form-label-focus;
+    }
+  }
+  label,
+  .c-form-control-label {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+
+  input,
+  select,
+  textarea {
+    border: 2px solid rgb(var(--color-border));
+    border-radius: 9px;
+    padding: 0.625rem;
+    font-family: var(--font-text-regular), "Roboto", sans-serif;
+    font-size: 1.1rem;
+    color: rgb(var(--color-dark));
+    outline: none;
+    margin-bottom: 0.5rem;
+    background: transparent;
+    box-sizing: border-box;
+  }
+}

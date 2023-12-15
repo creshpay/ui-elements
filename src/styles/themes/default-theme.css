@@ -1,0 +1,47 @@
+:root {
+  font-family: var(--font-text-regular), 'roboto', 'helvetica';
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  overflow: auto;
+}
+
+:root body {
+  margin: 0;
+  font-family: var(--font-text-regular);
+}
+
+:root body a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: rgb(var(--color-black));
+  font-family: var(--font-text-regular);
+}
+
+:root body .box-shadow {
+  box-shadow: 1px 1px 5px 0px #a4a4a4;
+}
+
+:root body h1,
+:root body h2 {
+  color: rgb(var(--color-primary));
+  font-family: var(--font-text-bold);
+}
+
+:root body h3 h4 {
+  color: rgb(var(--color-black));
+  font-family: var(--font-text-semibold);
+}
+
+:root body h5 h6 {
+  color: rgb(var(--color-black));
+  font-family: var(--font-text-regular);
+}
+
+:root body p,
+:root body span,
+:root body label,
+:root body th,
+:root body td,
+:root body tr {
+  font-family: var(--font-text-regular);
+}

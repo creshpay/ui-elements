@@ -1,0 +1,129 @@
+// alignment
+$alignments: ('center': center,
+  'start': start,
+  'end': end,
+  'flex-start': flex-start,
+  'flex-end': flex-end,
+  'left': left,
+  'right': right,
+  'normal': normal,
+  'baseline': baseline,
+  'first-baseline': first baseline,
+  'last-baseline': last baseline,
+  'space-between': space-between,
+  'space-around': space-around,
+  'space-evenly': space-evenly,
+  'stretch': stretch
+);
+
+$flex-directions: (
+  'row': row,
+  'row-reverse': row-reverse,
+  'column': column,
+  'column-reverse': column-reverse,
+);
+
+$display: (
+  'flex': flex,
+  'block': block,
+  'inline': inline,
+  'inline-block': inline-block,
+  'inline-flex': inline-flex
+);
+
+$positions: (
+  'static': static,
+  'absolute': absolute,
+  'fixed': fixed,
+  'relative': relative,
+  'sticky': sticky
+);
+
+$text-alignments: (
+  'left': left,
+  'right': right,
+  'center': center,
+  'justify': justify,
+);
+
+@each $name, $value in $display {
+  .#{$name} {
+    display: $value;
+  }
+}
+
+@each $name, $value in $positions {
+  .position-#{$name} {
+    position: $value;
+  }
+}
+
+@each $name, $value in $text-alignments {
+  .text-align-#{$name} {
+    text-align: $value;
+  }
+}
+
+@each $name, $value in $alignments {
+  .justify-content-#{$name} {
+    justify-content: $value;
+  }
+
+  .justify-items-#{$name} {
+    justify-items: $value;
+  }
+
+  .justify-self-#{name} {
+    justify-self: $value;
+  }
+
+  .align-content-#{$name} {
+    align-content: $value;
+  }
+
+  .align-items-#{$name} {
+    align-items: $value;
+  }
+
+  .align-self-#{$name} {
+    align-self: $value;
+  }
+}
+
+@each $name, $value in $flex-directions {
+  .flex-direction-#{$name} {
+    flex-direction: $value;
+  }
+}
+
+@for $i from 1 through 100 {
+  .c-mt-#{$i} {
+    margin-top: #{$i}px;
+  }
+  .c-ml-#{$i} {
+    margin-left: #{$i}px;
+  }
+  .c-mr-#{$i} {
+    margin-right: #{$i}px;
+  }
+  .c-mb-#{$i} {
+    margin-bottom: #{$i}px;
+  }
+
+  .c-pt-#{$i} {
+    padding-top: #{$i}px;
+  }
+  .c-pl-#{$i} {
+    padding-left: #{$i}px;
+  }
+  .c-pr-#{$i} {
+    padding-right: #{$i}px;
+  }
+  .c-pb-#{$i} {
+    padding-bottom: #{$i}px;
+  }
+
+  .c-grap-#{$i} {
+    gap: #{$i}px;
+  }
+}

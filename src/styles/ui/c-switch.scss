@@ -1,0 +1,63 @@
+.c-switch {
+  --switch-container-width: 56px;
+  --switch-size: calc((var(--switch-container-width) / 2) + 2px);
+  cursor: pointer;
+  display: block;
+  width: var(--switch-container-width);
+  padding: 3px;
+
+  .input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .switch {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: var(--switch-size);
+    flex-basis: var(--switch-container-width);
+    border-radius: var(--switch-size);
+    background-color: rgb(var(--color-grey));
+    flex-shrink: 0;
+    transition: background-color 0.25s ease-in-out;
+
+    &:hover::before {
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      transition: all 0.375s ease-in-out;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 3px;
+      height: calc(var(--switch-size) - 6px);
+      width: calc(var(--switch-size) - 6px);
+      border-radius: 9999px;
+      background-color: rgb(var(--color-light-grey));
+      transition: transform 0.375s ease-in-out;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0);
+    }
+  }
+
+  .input:checked + .switch {
+    background-color: rgb(var(--color-tertiary));
+  }
+
+  .input:checked + .switch::before {
+    transform: translateX(
+                    calc(#{var(--switch-container-width)} - #{var(--switch-size)})
+    );
+  }
+
+  .input:disabled + .switch {
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "validation_messages": {
+    "password_validation_rule": "Le mot de passe doit être de 8 caractères minimum et contenir au moins 1 chiffre, 1 caractère minuscule, 1 caractère majuscule",
+    "passwords_match_rule": "Les mots de passe ne sont pas les mêmes",
+    "date_validation_rule": "Format de date non valide",
+    "name_string_validation_rule": "Le champ est invalide. Uniquement les caractères alphabétiques et spéciaux suivants sont autorisés: -'",
+    "address_validation_rule": "Le champ est invalide. Uniquement les caractères alphanumériques et spéciaux suivants sont autorisés: -_'.,",
+    "phone_number_rule": "Le champ est invalide. Uniquement les numéros français sont autorisés."
+  },
+  "directives": {
+    "copy_to_clipboard": {
+      "copied": "Copié",
+      "click_to_copy": "Cliquer pour copier"
+    }
+  },
+  "datatable": {
+    "no_data": "Pas de donnée",
+    "footer": {
+      "rows_per_page": "Lignes par page:"
+    },
+    "retry": "Réessayer",
+    "error_message": "Une erreur s'est produite, les données ne peuvent être récupéré",
+    "loading": "Chargement des données"
+  },
+  "slider": {
+    "month": "mois",
+    "perMonth": "par mois pendant",
+    "taxFree": "mois (HT)",
+    "error": "La valeur doit être un nombre comprit entre {min} et {max}"
+  },
+  "common": {
+    "errors": {
+      "default_error": "Une erreur s'est produite, veuillez réessayer ultérieurement",
+      "file_size_error": "Le fichier '{name}' doit avoir un poids inférieur à {size}KB",
+      "file_size_error_alt": "Le fichier doit avoir un poids inférieur à {size}KB",
+      "file_type_error": "Seuls les fichiers de type {types} sont acceptés",
+      "no_data": "Pas de donnée",
+      "invalid_file_error": "Le document fourni semble corrompu, impossible de l'afficher. Veuillez demander au responsable de l'enseigne de le resoumettre."
+    },
+    "all": "Tout"
+  },
+  "modal": {
+    "ok": "Valider",
+    "cancel": "Annuler"
+  },
+  "document": {
+    "read": "Consulter le document",
+    "upload": "Téléverser le document",
+    "download": "Sauvegarder le document",
+    "validate": "Valider le document"
+  },
+  "filters": {
+    "all": "Tout",
+    "daily": "Dernier 24h",
+    "weekly": "Semaine",
+    "monthly": "Mois",
+    "yearly": "Année",
+    "dates": {
+      "today": "Aujourd'hui",
+      "last_7_days": "7 derniers jours",
+      "last_4_weeks": "4 dernières semaines",
+      "last_3_months": "3 derniers mois",
+      "last_12_months": "12 derniers mois",
+      "month_to_date": "Le mois en cours",
+      "quarter_to_date": "Le trimestre en cours",
+      "year_to_date": "L'année en cours",
+      "all_time": "Tout le temps"
+    },
+    "dropdown": {
+      "label": "Enseignes:",
+      "selection_unique": "{count} sélectionnée",
+      "selection_multiple": "{count} sélectionnées",
+      "all": "Toutes les enseignes"
+    },
+    "download_btn": "Télécharger un extrait"
+  }
+}

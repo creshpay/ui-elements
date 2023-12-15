@@ -1,0 +1,51 @@
+@import './c-base-form-control.scss';
+
+.c-form-control.c-checkbox {
+  cursor: pointer;
+
+  .c-checkbox-view {
+    min-width: 16px;
+    min-height: 16px;
+    max-height: 16px;
+    max-width: 16px;
+    border: 2px solid;
+    border-radius: 5px;
+    border-color: rgb(var(--color-primary));
+    &.invalid {
+      border-color: rgb(var(--color-error));
+    }
+  }
+
+  &.disabled {
+    cursor: initial !important;
+    .c-checkbox-view {
+      border-color: rgb(var(--color-grey));
+    }
+    .c-checkbox-label {
+      cursor: initial !important;
+    }
+  }
+
+  .c-checkbox-label {
+    position: relative;
+    left: 15px;
+    display: flex;
+    cursor: pointer;
+    font-family: var(--font-text-regular), 'Roboto', sans-serif;
+    text-transform: uppercase;
+    user-select: none; /* standard syntax */
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+
+    &.no-uppercase {
+      text-transform: initial;
+    }
+  }
+}
+
+.c-checkbox-error-message {
+  font-size: 0.75rem;
+  color: $form-field-invalid-foreground;
+}

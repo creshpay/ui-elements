@@ -1,0 +1,78 @@
+@import './c-base-form-control.scss';
+
+.c-form-control {
+  input[type=number]::-webkit-outer-spin-button,
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
+  .progress-bar-container {
+    position: relative;
+  }
+}
+
+.c-form-control.has-prefix {
+  position: relative;
+  .c-form-control-label {
+    padding-left: 24px;
+  }
+  
+  input {
+    padding-left: 24px;
+    &:focus, &.valid.not-empty, &.not-empty {
+      & ~ .c-form-control-label{
+        @include tablet_and_up {
+          padding-left: 0px;
+        }
+        @include phone {
+          padding-left: 0px;
+        }
+      }
+    }
+  }
+  .prefix {
+    position: absolute;
+    top: 38px;
+  }
+}
+
+.c-form-control.has-progress-bar {
+  input {
+    margin-bottom: 0;
+    // border-color: transparent !important;
+  }
+  .c-progress-bar {
+    height: 4px;
+    position: inherit;
+    width: 100%;
+  }
+}
+
+.c-form-control.has-suffix {
+  position: relative;
+  .c-form-control-label {
+    padding-right: 24px;
+  }
+  
+  input {
+    padding-right: 24px;
+    &:focus, &.valid.not-empty, &.not-empty {
+      & ~ .c-form-control-label{
+        @include tablet_and_up {
+          padding-right: 0px;
+        }
+        @include phone {
+          padding-right: 0px;
+        }
+      }
+    }
+  }
+  .suffix {
+    position: absolute;
+    top: 38px;
+    right: 0;
+  }
+}

@@ -1,0 +1,76 @@
+.c-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: auto;
+  outline: 0;
+  display: flex;
+
+  .c-modal {
+    box-sizing: border-box;
+    color: rgba(0,0,0,.65);
+    font-size: 14px;
+    line-height: 1.5;
+    list-style: none;
+    position: relative;
+    width: auto;
+    margin: auto;
+
+    padding: 30px 40px;
+    max-width: calc(100vw - 100px);
+    // border-radius: 9px;
+
+    background-color: white;
+    background-clip: padding-box;
+    border: 0;
+    // box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.20);
+    pointer-events: auto;
+    z-index: 1001;
+    font-family: var(--font-text-semibold);
+
+    border-radius: 20px;
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.20), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+
+    .content {
+      min-height: 100px;
+      font-family: var(--font-text-regular);
+    }
+
+    .c-modal-footer {
+      display: flex;
+      justify-content: center;
+      .ok-btn {
+        margin-left: 15px;
+      }
+    }
+
+    .c-modal-header {
+      display: flex;
+      margin-bottom: 1rem;
+      align-items: center;
+
+      .title {
+        flex: 1;
+        margin: 0;
+        color: rgb(var(--color-primary));
+        font-weight: bold;
+      }
+      .close-btn {
+        cursor: pointer;
+      }
+    }
+  }
+  .mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationDir": "dist",
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "pretty": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "outDir": "dist",
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "rootDir": ".",
+    "sourceMap": false,
+    "strict": true,
+    "target": "esnext",
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/cypress/types",
+      "node_modules/cypress/types/chai",
+      "src/@types"
+    ],
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "types": [
+      "vite/client",
+      "cypress",
+      "mocha",
+      "chai",
+      "node",
+    ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ],
+    "skipLibCheck": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "./*.d.ts",
+    "index.ts"
+],
+  "exclude": [
+    "node_modules",
+    "node_modules/*",
+    "tests"
+  ]
+}

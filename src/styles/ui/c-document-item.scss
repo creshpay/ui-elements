@@ -1,0 +1,48 @@
+.c-document-item {
+  display: flex;
+  background: #D6EBFA;
+  min-height: 40px;
+  padding: 0 15px;
+  border-radius: 4px;
+
+  &.unavailable {
+    background: #EAF5FC;
+  }
+
+  .document-label-container {
+    flex: 1;
+    color: rgb(var(--color-text));
+    display: flex;
+    align-items: center;
+  }
+
+  .actions {
+    display: flex;
+    color: rgb(var(--color-secondary));
+    align-items: center;
+
+    .action-item {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      background: #3D647C20;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      box-sizing: border-box;
+
+      &:hover {
+        border: 1px solid rgb(var(--color-text));
+      }
+    }
+  }
+
+  &.approved {
+    background: #D7FCF7;
+  }
+
+  &.not-approved {
+    background: #D9565620;
+  }
+}

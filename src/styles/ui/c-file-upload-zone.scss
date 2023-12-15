@@ -1,0 +1,63 @@
+.c-file-upload-zone {
+  min-width: 400px;
+  min-height: 150px;
+
+  padding: 40px;
+  border: 2px dashed rgb(var(--color-grey));
+  border-radius: 9px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .c-spinner {
+    margin-top: unset;
+    margin-left: unset;
+    margin: auto;
+  }
+
+  .progression-bar-wrapper {
+    width: 100%;
+  }
+
+  input[name="pdfFileInput"] {
+    display: none;
+  }
+
+  &:hover,
+  &.dragging {
+    border: 2px solid rgb(var(--color-primary));
+    .cresh-icon .icon-path {
+      stroke: rgb(var(--color-primary)) !important;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.dragging {
+    cursor: grabbing;
+  }
+
+  .input-file {
+    display: none;
+  }
+
+  .error-message {
+    text-align: center;
+    display: inline-block;
+  }
+
+  input[type=file] {
+    display: none;
+  }
+}

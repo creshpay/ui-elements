@@ -1,0 +1,103 @@
+.c-steps {
+  .c-steps-headers {
+    display: flex;
+    margin-bottom: 20px;
+
+    font-family: var(--font-text-regular);
+    font-size: 0.875rem;
+
+    .c-step-header-item {
+      display: flex;
+      flex: 1;
+      align-items: flex-start;
+      flex-direction: column;
+      min-height: 76px;
+      justify-content: space-between;
+
+      &:last-child {
+        flex: inherit;
+      }
+
+      .c-step-header-top {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0px 24px;
+        .step-progress-bar {
+          flex: 1;
+          height: 5px;
+          background: #E8ECEF;
+
+          .progress-bar {
+            background: rgb(var(--color-secondary));
+            height: 4px;
+
+            &.unaccomplished {
+              border-bottom-right-radius: 8px;
+              border-top-right-radius: 8px;
+            }
+          }
+        }
+      }
+
+      .c-step-header-bottom {
+        &.stepped {
+          color: rgb(var(--color-secondary));
+        }
+
+        &.unstepped {
+          color: #BBC9D3;
+        }
+      }
+
+      .c-step-index {
+        display: flex;
+        width: 48px;
+        height: 48px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 48px;
+
+        &.stepped {
+          background: rgb(var(--color-secondary));
+          .step-index-value {
+            color: #ffffff;
+          }
+          .c-icon {
+            .color-path {
+              fill: #ffffff;
+            }
+          }
+        }
+
+        &.unstepped {
+          background: #E8ECEF;
+
+          .step-index-value {
+            color: rgb(var(--color-text));
+          }
+
+          .c-icon {
+            .color-path {
+              fill: rgb(var(--color-text));
+            }
+          }
+        }
+      }
+    }
+
+    @include tablet_and_down {
+
+      & {
+        flex-direction: column;
+      }
+      .c-step-header-item {
+        line-height: 40px;
+        .icon-container {
+          margin: auto 0;
+        }
+      }
+    }
+  }
+}

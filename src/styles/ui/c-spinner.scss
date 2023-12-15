@@ -1,0 +1,29 @@
+
+.c-spinner {
+  display: flex;
+  border-color: rgb(var(--color-primary)) rgb(var(--color-shadow)) rgb(var(--color-shadow)) ;
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 50%;
+  animation: spinner 800ms infinite linear;
+  overflow: hidden;
+  margin: auto;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg)
+  }
+  25%{
+    transform: rotate(90deg)
+  }
+  50%{
+    transform: rotate(180deg)
+  }
+  75%{
+    transform: rotate(270deg)
+  }
+  100%{
+    transform: rotate(360deg)
+  }
+}

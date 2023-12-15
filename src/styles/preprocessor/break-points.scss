@@ -1,0 +1,39 @@
+// screen-sizes
+$xxl: 1440px;
+$xl: 1200px;
+$md: 1000px;
+$sm: 800px;
+$xs: 600px;
+$xxs: 320px;
+
+$maxPhoneHeight: 812px; // iphone x height
+
+@mixin phone {
+  @media (max-width: $xs) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $xs) and (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin tablet_and_down {
+  @media (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin tablet_and_up {
+  @media (min-width: $xs) {
+    @content;
+  }
+}
+
+@mixin web {
+  @media (min-width: $md) {
+    @content;
+  }
+}

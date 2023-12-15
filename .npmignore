@@ -1,0 +1,10 @@
+# Exclude All
+/*
+
+# Explicit includes
+!dist
+!package.json
+!README.md
+
+# Artifacts
+.DS_Store

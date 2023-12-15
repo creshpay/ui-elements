@@ -1,0 +1,26 @@
+.c-card {
+
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 20px;
+  box-shadow: 0 2px 16px 0 rgba(153, 155, 168, 0.3);
+
+  .c-card-header {
+    .c-title {
+      font-size: 1.125rem;
+      color: rgb(var(--color-dark));
+    }
+  }
+
+  @include web {
+    padding: 50px 40px;
+  }
+
+  @include tablet {
+    padding: 60px 40px;
+  }
+
+  @include phone {
+    padding: 30px;
+  }
+}
