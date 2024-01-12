@@ -71,7 +71,7 @@ function onContentToggle () {
 
       pre {
         background: rgb(var(--color-dark));
-        color: rgb(var(--color-warning));
+        color: var(--color-warning);
       }
     }
 
